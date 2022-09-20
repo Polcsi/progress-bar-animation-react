@@ -1,0 +1,138 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-color: #fff;
+  --gray-color-1: #2c2c2c;
+  --gray-color-2: #2e2e35;
+  --gray-color-3: #282828;
+  --gray-color-4: #222226;
+  --green-primary: #43be98;
+  --green-primary-shadow-1: rgba(56, 153, 122, 0.1);
+  --green-primary-shadow-2: rgba(56, 153, 122, 0.2);
+  --green-primary-shadow-3: rgba(56, 153, 122, 0.3);
+  --green-primary-shadow-4: rgba(56, 153, 122, 0.4);
+}
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+/* Banner */
+.banner-background {
+  background-color: var(--gray-color-1);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+.banner-container {
+  color: var(--text-color);
+  display: grid;
+  gap: 0.5em;
+}
+.text-shadow {
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+.banner-container h1,
+p {
+  text-align: center;
+}
+/* BodyTxt */
+.about-background {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--gray-color-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-container {
+  text-align: justify;
+  max-width: 900px;
+  width: 95%;
+  display: grid;
+  gap: 2em;
+  color: var(--text-color);
+}
+.about-container h1 {
+  text-align: center;
+}
+.about-container p {
+  line-height: 2;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+/* Skills */
+.skills-section {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: var(--gray-color-3);
+  color: var(--text-color);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.section-title {
+  text-align: center;
+}
+.skills-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(20rem, 36vw, 39.5rem), 1fr)
+  );
+  gap: 1rem;
+}
+.skills-container article > .title {
+  grid-area: title;
+}
+.skills-container article > .percentage {
+  grid-area: percentage;
+  text-align: right;
+}
+.skills-container article > .progress-bar {
+  grid-area: progress;
+}
+.skills-container article {
+  display: grid;
+  grid-template-areas:
+    "title   percentage"
+    "progress progress";
+}
+.progress-bar {
+  background-color: var(--gray-color-4);
+  width: 100%;
+  height: clamp(1.8rem, 2.5vw, 3.13rem);
+  position: relative;
+  box-shadow: var(--green-primary-shadow-4) 5px 5px,
+    var(--green-primary-shadow-3) 10px 10px,
+    var(--green-primary-shadow-2) 15px 15px,
+    var(--green-primary-shadow-1) 20px 20px;
+}
+.progress-track {
+  content: "";
+  position: absolute;
+  background-color: var(--green-primary);
+  width: 50%;
+  height: clamp(1.8rem, 2.5vw, 3.13rem);
+  transition: width 0.2s ease;
+}
+.skills-container article .title h3 {
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  text-transform: uppercase;
+}
+.skills-container article .percentage span {
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+}
